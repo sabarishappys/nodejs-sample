@@ -1,0 +1,6 @@
+projectKey=my_nodejs_project
+serverUrl=http://15.206.171.96
+serverVersion=9.6.1.59531
+dashboardUrl=http://15.206.171.96/dashboard?id=my_nodejs_project
+ceTaskId=AZNheyQOnIeJYb5uao2y
+ceTaskUrl=http://15.206.171.96/api/ce/task?id=AZNheyQOnIeJYb5uao2y
