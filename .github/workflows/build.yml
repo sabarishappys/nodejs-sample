@@ -3,9 +3,7 @@ name: Build
 on:
   pull_request:
     branches:
-      - production_v3
-      - development
-      - staging_2
+      - main
     types: [opened, synchronize, reopened]
 
 jobs:
@@ -18,7 +16,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       - uses: sonarsource/sonarqube-scan-action@master
         env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_TOKEN: ${{ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCxvuyLvhrMc7jk1QAWxjydMXY4v2Q4+Po9XgwL2R/fmKcFNzsnTW/SuwW3Q0Jd7SlF9Rql2bH/HKU4SbaYNi4fJhl7f5Eou1tNaGs0d/9aBPitFHMI6cifOHuMrlzSzYI834DhF3nqAs7mNX0z+TQ+KRo2RxtWCsEmP4/dl2beqQiSwdesv87gyk21FPIc7znyY00kZlfs7lPw/KsfuNSp2ZekD4Ai1sS01GpOGED+KNhzw/XhbCmog9KLXG3QcjOIaCVf8FPaFNL4Dl1cbVw27bTKcjV73fDKD9W/nf5jZlnZ7pO8CFOVFvkb9vs43e3UnMDYSBN2eTsGkleJVXZkgsHDHj9VVY9/wffHdf0ygQXMXiJ2x9XcwJWeEAwbcIkVZfDft5cixN0XyMhHcsCDs41kWpU7mVQxOjCfrh0WFSv45TX5ngZpTRNIm3k4DC9y5Nn9yAAXRul9PzRw0uMvnd0oQXA0F7YcZE5t5afDzAWTk6NzJajKatkhY5MoT64QLlNUtZY2TfQ5Mii8X9hE3EVbRo28l7l3xA8PPtQiMQqPB+6RZXG7zeF3W7B5+TOnXx0nVViDFmAIOESnP0dZDXvS6CJ1hpfIhyLDYq/MdFAyWCafQrupUxLuYuMuSm57K0xQgv85CCPed+BpIUL90IHoleLuTdSFasBXLRnXEQ== sabarish1908@gmail.com }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
           
       # If you wish to fail your job when the Quality Gate is red, uncomment the
